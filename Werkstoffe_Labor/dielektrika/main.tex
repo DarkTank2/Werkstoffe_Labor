@@ -1,0 +1,48 @@
+\documentclass[a4paper,twoside,12pt,DIV=13,BCOR=5mm,numbers=noenddot,cleardoublepage=empty]{scrbook}
+\input{format-LU} 
+\usepackage{graPhicx}
+\usepackage{esvect}
+\usepackage{bm}
+\usepackage{mathtools}
+\begin{document}
+    \renewcommand{\baselinestretch}{1.25}
+    \newcommand{\StudentA}{Philipp Hanser}
+    \newcommand{\MatrNrA}{11775264}
+    \newcommand{\StudentB}{Florian Strebl}
+    \newcommand{\MatrNrB}{11712190}
+    \newcommand{\StudentC}{Alexander Seiler}
+    \newcommand{\MatrNrC}{11771276}
+
+    \newcommand{\LUDatum}{06.06.2019}
+    \newcommand{\LUGruppe}{Gr. 15}
+    \newcommand{\LUBetreuer}{Geiginger, Lisa-Marie}  
+
+    \large
+    \includepdf[fitpaper=true,
+                            picturecommand*={\unitlength1cm 
+                            \put(7.3,7.7){\StudentA} \put(14.1,7.7){\MatrNrA}
+                \put(7.3,7.0){\StudentB} \put(14.1,7.0){\MatrNrB}
+                \put(7.3,6.3){\StudentC} \put(14.1,6.3){\MatrNrC}
+                            \put(7.3,5.1){\LUDatum} 
+                \put(7.3,4.4){\LUGruppe} 
+                \put(7.3,3.7){\LUBetreuer} 
+    }]
+    {pictures/DeckblattLUDie}
+
+
+    \setcounter{tocdepth}{3}
+
+    \setcounter{page}{0}
+    \renewcommand{\thepage}{\roman{page}}
+    \tableofcontents \cleardoublepage
+
+    \setcounter{page}{1}
+    \renewcommand{\thepage}{\arabic{page}}
+    \setcounter{chapter}{0}
+
+    \chapter{Durchgangs- und Oberfl\"achenwiderstand}
+
+    \chapter{Dieelektrizit\"atszahl}
+
+    \chapter{Durchschlagsfestigkeit}
+\end{document}
