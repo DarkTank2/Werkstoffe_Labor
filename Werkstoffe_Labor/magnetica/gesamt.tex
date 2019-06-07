@@ -1,0 +1,642 @@
+\documentclass[a4paper,twoside,12pt,DIV=13,BCOR=5mm,numbers=noenddot,cleardoublepage=empty]{scrbook}
+\input{format-LU} 
+\usepackage{graPhicx}
+\usepackage{esvect}
+\usepackage{bm}
+\usepackage{mathtools}
+\begin{document}
+    \renewcommand{\baselinestretch}{1.25}
+    \newcommand{\StudentA}{Philipp Hanser}
+    \newcommand{\MatrNrA}{11775264}
+    \newcommand{\StudentB}{Florian Strebl}
+    \newcommand{\MatrNrB}{11712190}
+    \newcommand{\StudentC}{Alexander Seiler}
+    \newcommand{\MatrNrC}{11771276}
+
+    \newcommand{\LUDatum}{02.05.2019}
+    \newcommand{\LUGruppe}{Gr. 15}
+    \newcommand{\LUBetreuer}{Univ.Lektor Dipl.-Ing. Martin Evanzin}  
+    
+    \large
+    \includepdf[fitpaper=true,
+                            picturecommand*={\unitlength1cm 
+                            \put(7.3,7.7){\StudentA} \put(14.1,7.7){\MatrNrA}
+                \put(7.3,7.0){\StudentB} \put(14.1,7.0){\MatrNrB}
+                \put(7.3,6.3){\StudentC} \put(14.1,6.3){\MatrNrC}
+                            \put(7.3,5.1){\LUDatum} 
+                \put(7.3,4.4){\LUGruppe} 
+                \put(7.3,3.7){\LUBetreuer} 
+    }]
+    {pictures/DeckblattLUMag}
+
+
+    \setcounter{tocdepth}{3}
+
+    \setcounter{page}{0}
+    \renewcommand{\thepage}{\roman{page}}
+    \tableofcontents \cleardoublepage
+
+    \setcounter{page}{1}
+    \renewcommand{\thepage}{\arabic{page}}
+    \setcounter{chapter}{0}
+
+    %------------------------------------------------------------
+    \chapter{Theoretische Grundlagen}
+    %------------------------------------------------------------
+    \section{Magnetische Grundgr\"o\ss{}en}
+        \subsection{Durchflutung $\Theta$}
+        Laut dem Durchflutungssatz ist die magnetische Umlaufspannung \\ 
+        $V(\partial A) = I(A)$ gleich der rechtswendig umfassten Durchflutung
+        $\Theta$.\\ \\
+        In der Labor\"ubung ist der Rand der Fl\"ache $(\partial A)$ der mittlere Umfang der 
+        Spule. Der Strom $I(A)$ der durch die Fl\"ache tritt ist der Spulenstrom, 
+        wobei dieser f\"ur N Windungen, N mal durch die Fl\"ache tritt. Es gilt \\
+        \begin{equation}
+            \Theta = N \cdot I
+        \end{equation}
+        \begin{equation}
+            [\Theta] = [A]
+        \end{equation}
+        \subsection{Magnetische Feldst\"arke H}
+        Die magnetische Feldst\"arke ist der lokale Repr\"asentant der Durchflutung. 
+        Sie gilt als die l\"angenbezogene magnetische Spannung
+        \begin{equation}
+            H = \frac{\Theta}{l}
+        \end{equation}
+        \begin{equation}
+            [H]=[\frac{A}{m}]
+        \end{equation}
+        Wobei l f\"ur die L\"ange des Fl\"achenrandes $(\partial A)$ gilt.
+        \subsection{Magnetische Fluss $\Phi$}
+        Vom Satz des magnetischen H\"ullenflusses geht hervor, 
+        dass ein durch die geschlossene Oberfl\"ache eines Raumteiles 
+        eintretender Fluss, gleich dem austretenden entspricht. Das hei\ss{}t 
+        der magnetische Fluss ist vom Verhalten \"ahnlich dem elektrischen Strom, 
+        wegen seiner gleichartigen Eigenschaften (Satz der Erhaltung der 
+        elektrischen Ladung). Der Unterschied besteht darin, dass es beim Fluss zu 
+        keinem Materietransport (Ladungstr\"ager) kommt. Er berechnet sich mittels 
+        seines lokalen Repr\"asentanten, der magnetischen Flussdichte B.
+        \begin{equation}
+            \Phi = \int_A B \cdot dA
+        \end{equation}
+        \begin{equation}
+            [\Phi]=[Vs]=[Wb]
+        \end{equation}
+        \subsection{Magnetische Flussdicht B}
+        Die magnetische Flussdichte beschreibt die Flussverteilung im Raum. Sie ist 
+        \"uber die Permeabilit\"at $\mu$ mit der magnetischen Feldst\"arke verkn\"upft. Im 
+        allgemeinen Fall gilt
+        \begin{equation}
+            \vv{\bm{B}}=\mu \cdot \vv{\bm{H}}
+        \end{equation}
+        \begin{equation}
+            [B]=[\frac{Vs}{m^2}]=[T]
+        \end{equation}
+        Ist nun die Flussdichte auch abh\"angig von der Ausrichtung der magnetischen 
+        Momente so gilt
+        \begin{equation}
+            \vv{\bm{B}}=\mu_\mathrm{0} \cdot (\vv{\bm{H}} + \vv{\bm{M}})
+        \end{equation}
+        \subsection{Magnetische Polarisation I, Magnetisierung M}
+        Die Magnetisierung und die magnetische Polarisation bezeichnen die gleiche 
+        physikalische Gr\"o\ss{}e, etwa das Ma\ss{} der Ausrichtung der magnetischen Momente 
+        im Material. Die beiden Gr\"o\ss{}en I und M h\"angen \"uber die Konstante 
+        $\mu_\mathrm{0}$ zusammen:
+        \begin{equation}
+            \vv{\bm{I}}=\mu_\mathrm{0} \cdot \vv{\bm{M}}
+        \end{equation}
+        \begin{equation}
+            [I]=[T],\,[M]=[\frac{A}{m}]
+        \end{equation}
+        \subsection{Permeabilit\"at $\mu$}
+        Die Permeabilit\"at zeigt den proportionalen Zusammenhang zwischen 
+        magnetischer Flussdichte und Feldst\"arke. Sie setzt sich aus der 
+        magnetischen Feldkonstante sowie der einheitenlosen, materialabh\"angigen 
+        relativen Permeabilit\"at zusammen.
+        \begin{equation}
+            \mu=\mu_\mathrm{0} \cdot \mu_\mathrm{r}
+        \end{equation}
+        \begin{equation}
+            [\mu_\mathrm{0}]=[\frac{Vs}{Am}],\,[\mu_\mathrm{r}]=[1]
+        \end{equation}
+        Bei para- und diamagnetischen Werkstoffen kann diese meist als konstant 
+        angesehen werden. Anders ist dies bei ferromagnetischen Stoffen, wobei die 
+        Magnetisierung von der Vorgeschichte des Materials abh\"angt.
+        \subsection{Suzeptibilit\"at $\chi$}
+        Die Suszeptibilit\"at spiegelt den reinen Materialeinfluss ohne die 
+        Permeabilit\"at des leeren Raumes wieder:
+        \begin{equation}
+            \chi=\mu_\mathrm{r}-1
+        \end{equation}
+        \begin{equation}
+            [\chi]=[1]
+        \end{equation}
+        Bei dia- und paramagnetischen Stoffen weicht die relative Permeabilit\"at 
+        nur so geringf\"ugig von 1 ab, sodass aus schreibtechnischer Bequemlichkeit 
+        die Suszeptibilit\"at benutzt wird.
+        \subsection{Magnetischer Widerstand $R_\mathrm{m}$}
+    Der magnetische Widerstand gibt das Verh\"altnis zwischen Fluss und 
+    Durchflutung an.
+    \begin{equation}
+        R_\mathrm{m}=\frac{\Theta}{\Phi}
+    \end{equation}
+    \begin{equation}
+        [R_\mathrm{m}]=[\frac{A}{Vs}]
+    \end{equation}
+    Der magnetische Widerstand ist abh\"angig vom Material und der Geometrie 
+    des Objektes. Bei ferromagnetischen Materialien ist er auch von der 
+    Vorgeschichte der Magnetisierung abh\"angig.
+    \section{Magnetische Stoffeigenschafften}
+        \subsection{Diamagnetismus}
+        Die Atome diamagnetischer Stoffe haben eine aufgef\"ullte 
+        Elektronenschale, die Summe der Drehimpulsvektoren verschwindet, und 
+        somit ist ohne Einwirkung eines Fremdfeldes kein eigenes, 
+        resultierendes magnetisches Moment vorhanden. Bringt man nun eine 
+        diamagnetische Substanz in ein magnetisches Feld, so induziert dieses 
+        in den Elektronenh\"ullen der Atome einen Strom, dessen Magnetfeld dem 
+        \"au\ss{}eren entgegengerichtet ist. Diamagnetismus f\"uhrt so zu einer 
+        Abschw\"achung des Magnetfeldes in der Substanz. In Materialien deren 
+        Atome, Ionen oder Molek\"ule keine ungepaarten Elektronen besitzen, ist 
+        Diamagnetismus die einzige Form von Magnetismus. Hier ist die 
+        Suszeptibilit\"at daher negativ und bis zu einer kritischen Temperatur 
+        von dieser unabh\"angig. 
+        \bild{diamagnetismus.png}{htb}{0.5}{Kennlinien des Diamagnetismus}
+        \subsection{Paramagnetismus}
+        Der Paramagnetismus ist eine schwache bis mittlere Form des 
+        Magnetismus, bei dem die Magnetisierung parallel zum angelegten Feld 
+        orientiert ist. Die Magnetisierung M ist proportional zur Feldst\"arke H, 
+        die Suszeptibilit\"at ist positiv. Die Suszeptibilit\"at erweist sich 
+        umgekehrt proportional zur Temperatur. Die Atome tragen ein permanentes 
+        magnetisches Moment. Durch das angelegte Feld werden diese permanenten 
+        Dipole gegen die Wirkung der Temperaturbewegung teilweise parallel 
+        ausgerichtet.
+        \bild{paramagnetismus.png}{htb}{0.5}{Kennlinien des Paramagnetismus}
+        \subsection{Ferromagnetismus}
+        Die bedeutendste Art des Magnetismus ist der Ferromagnetismus. Die 
+        entstehende Magnetisierung M ist parallel zur angelegten Feldstarke H. 
+        Es handelt sich um eine S\"attigungsmagnetisierung und daher weist sie 
+        schon bei kleinsten Feldst\"arken sehr hohe Werte auf. Die 
+        Suszeptibilitat ist positiv und kann Betr\"age von K = $10^5$ annehmen. 
+        Der Ferromagnetismus ist ein temperaturabh\"angiges Ph\"anomen. Die 
+        S\"attigungsmagnetisierung nimmt mit steigender Temperatur ab, bis sie 
+        schlie\ss{}lich bei der Curie Temperatur praktisch verschwindet und Werte 
+        einer paramagnetischen Magnetisierung annimmt.
+        \\
+        \\
+        Beim Ferromagnetismus sind die magnetischen Momente einzelner Teilchen 
+        nicht unabh\"angig voneinander, sondern richten sich spontan parallel 
+        aus. Die Kopplung der magnetischen Momente erstreckt sich aber nicht 
+        \"uber das ganze Material, es ist auf kleine Bereiche, die sogenannten 
+        Weissschen Bezirken, beschr\"ankt. Die Ausrichtung dieser ist statistisch 
+        verteilt, sodass der Gesamtk\"orper unmagnetisch erscheint. Beim Anlegen 
+        eines \"au\ss{}eren Magnetfeldes richten sich die Weissschen Bezirke 
+        gleichnamig aus. Diese Gleichrichtung bleibt auch nach Entfernen des 
+        \"au\ss{}eren Feldes erhalten, man erh\"alt eine permanente Magnetisierung. 
+        Die Magnetisierung kann man durch Erhitzen jenseits der Curie-Temperatur 
+        oder mechanischer Ersch\"utterung aufgehoben werden. 
+        \bild{kennlinien_ferromagnetismus.png}{htb}{1.5}{Kennlinien des Ferromagnetismus}
+    \section{Der magnetische Grundkreis}
+    Abbildung Abb.~\ref{fig:magnetischer_grundkreis.png} zeigt einen magnetische Grundkreis. Er besteht aus einem 
+    hochpermeablen Material, welcher einen geringen magnetischen 
+    Spannungsabfall aufweist und einen Luftspalt, an welchen der Gro\ss{}teil der 
+    Leistung des magnetischen Kreises verrichtet wird. Der magnetische 
+    Widerstand in der Luft ist um ein Vielfaches gr\"o\ss{}er als in Materialien mit 
+    einer hohen Permeabilit\"at. Diese Unterschiede erm\"oglichen die Einstellung 
+    gro\ss{}er Flussdichten und folglich einer dementsprechenden Feldst\"arke an 
+    gew\"unschten Orten.
+    \bild{magnetischer_grundkreis.png}{htb}{1.5}{Magnetischer Grundkreis mit Luftspalt}
+    \section{Magnetische Erscheinungen}
+        \subsection{Induktionsgesetz}
+        Induktionsgesetz: Die elektrische Umlaufspannung entspricht der 
+        Abnahmerate des rechtswendig umfassten magnetischen Flusses.
+        \begin{equation}
+            U = - N \cdot \frac{d\Phi}{dt} 
+        \end{equation}
+        Anders ausgedr\"uckt ist die Spannung entlang des Randes einer Fl\"ache 
+        gleich der zeitlichen \"Anderungsrate des magnetischen Flusses, der durch 
+        die Fl\"ache tritt. Bei einer Leiterschleife mit N Windungen wird die Fl\"ache 
+        n-mal durchtreten.
+        \subsection{Lorentzkraft}
+        In einem magnetischen bzw. elektrischen Feld betr\"agt der Kraftvektor $\vv{\bm{F}}$ auf 
+        eine Ladung
+        \begin{equation}
+            \vv{\bm{F}} = Q \cdot (\vv{\bm{E}} + \vv{\bm{v}} \times \vv{\bm{B}})
+        \end{equation}
+        Der elektrische Strom ist ein Repr\"asentant f\"ur bewegte Ladungstr\"ager mit 
+        der Geschwindigkeit v. Wenn man sich aus der Richtung von v in Richtung 
+        von B bewegt und diese Bewegung im Sinne einer Rechtschraube ein weiteres 
+        Mal fortf\"uhrt, gelangt man zu der Richtung des Kraftvektor $\vv{\bm{F}}$. Abbildung Abb.~\ref{fig:lorenzkraft.png} 
+        verdeutlicht diesen Zusammenhang.
+        \bild{lorenzkraft.png}{htb}{1.5}{Kraftentwicklung auf einen stromdurchflossenen Leiter im Magnetfeld}
+        \subsection{Hystereseschleife}
+        Die Hysterese im Gebiet des Ferromagnetismus beschreibt den 
+        Zusammenhang zwischen der in einem ferromagnetischen Stoff vorhandenen 
+        Feldst\"arke zu der sich einstellenden Flussdichte bzw. Magnetisierung. 
+        Hysterese beschreibt im Allgemeinen, dass eine ver\"anderliche 
+        Ausgangsgr\"o\ss{}e nicht allein von der Eingangsgr\"o\ss{}e abh\"angig ist, hier 
+        spielt die Vorgeschichte des Materials eine tragende Rolle.
+        \\
+        \\
+        Demnach ist nach Anlegen eines Feldes bei einem v\"ollig entmagnetisieren 
+        ferromagnetischem Material eine wahrnehmbare \"Anderung vom Verlauf der $M(H)$ 
+        bzw. $B(H)$ Charakteristik gegen\"uber einem bereits vormagnetisierten Stoff 
+        bemerkbar. Abbildung Abb.~\ref{fig:neukurve.png}\, zeigt dieses Ph\"anomen. Man nennt die Kennlinie beim 
+        Magnetisieren eines entmagnetisierten Stoffes Neukurve. Diese besitzt f\"ur
+         kleine Feldst\"arken einen praktisch linear ansteigenden Teil, welcher 
+         aufgrund reversibler Wandverschiebungen entsteht. Wird die Feldst\"arke 
+         erh\"oht, so zeigt der Kurvenverlauf einen durch irreversiblen 
+         Wandverschiebungen ausgel\"osten, stark ansteigenden Teil. Infolge 
+         magnetischer S\"attigung des Materials, vorausgesetzt die erforderliche 
+         Feldst\"arke wird erreicht, flacht der Verlauf stark ab. Reduziert man nun 
+         die Feldst\"arke auf null, so wird ein gewisser Anteil der Magnetisierung 
+         beibehalten, dieser Punkt wird als Remanenz bezeichnet.
+        \\
+        \\
+        Wird der Stoff nun mit einem, ungef\"ahr in derselben Gr\"o\ss{}enordnung 
+        gegensinnigen Feld beaufschlagt, dreht dieser Prozess die
+        Magnetisierungsrichtung um. Hierbei wird ein markanter Punkt der 
+        Feldst\"arke durchquert, bei dem sich die Magnetisierung des Materials 
+        kurzzeitig verfl\"uchtigt, die sogenannte Koerzitivfeldst\"arke. Der Stoff 
+        bleibt bei Wiederholung letzterer Schritte bis auf weiteres 
+        magnetisiert und weist analoges Verhalten auf.
+        \bild{neukurve.png}{htb}{1.5}{Hystereseschleife eines ferromagnetischen Materials mit Neukurve}
+        \\
+        \\
+        In der Praxis kann aber mithilfe der Hysteresecharakteristik ein 
+        ferromagnetischer Stoff durch ein sukzessive abnehmendes, magnetisches 
+        Wechselfeld entmagnetisiert werden.
+    
+
+    %------------------------------------------------------------    
+    \chapter{Messung an unlegiertem Einsatzstahl}
+    %------------------------------------------------------------
+    Im Rahmen dieser Messungen soll das magnetische Verhalten des Messobjekt untersucht und dargestellt werden.
+    \section{Messobjekt} \label{messobjekt}
+    \begin{itemize}
+        \item Wicklung $W_\mathrm{1}$: 730 Wdg.
+        \item Wicklung $W_\mathrm{2}$: 749 Wdg.
+        \item Wicklung $W_\mathrm{3}$: 732 Wdg.
+        \item Wicklung $W_\mathrm{4}$: 731 Wdg.
+        \item Kernau\ss{}endurchmesser $d_\mathrm{a}$: 183 mm
+        \item Kerninnendurchmesser $d_\mathrm{i}$: 153 mm
+        \item Breite b: 15 mm
+        \item H\"ohe h: 15 mm
+        \item Wirksamer Querschnitt $A_\mathrm{w}$: 225 mm$^2$
+        \item Mittlere Eisenl\"ange $l_\mathrm{m}$: 528 mm
+    \end{itemize}
+    \section{Aufnahme der Hystereseschleife}
+        \subsection{\"Ubungsaufbau}
+        Zum Aufnehmen der Hystereseschleife wird folgende Schaltung verwendet (Abb.~\ref{fig:unleg_eisenstahl_messung.png})
+        \bild{unleg_eisenstahl_messung.png}{htb}{1.5}{Messaufbau}
+        \\
+        \\
+        Die Windungszahlen des Messobjekts sind dem Kapitel \ref{messobjekt} zu 
+        entnehmen. Alle anderen Bauelemente haben folgende Werte:
+        \begin{itemize}
+            \item $G_\mathrm{1}$: 10 V$_\mathrm{pp}$, Dreieck
+            \item $V_\mathrm{1}$: 1x
+            \item $R_\mathrm{1}$: 4,7 $\Omega$
+            \item $R_\mathrm{2}$: 1 $\Omega$
+            \item Integratorelement: $\tau = 100$ ms
+        \end{itemize}
+        Die \"Ubertragung der Spannung an der Messspule \"uber den Integrator wird mit 
+        folgender Formel beschrieben. 
+        \begin{equation}
+            y = - \frac{1}{\tau} \int U_\mathrm{4} \cdot dt
+        \end{equation}
+        \subsection{Durchf\"uhrung}
+        Die Hystereseschleife wird mit variabler Frequenz aufgenommen. Um von 
+        den Messwerten x und y auf die Werte f\"ur Flussdichte B und magnetischer 
+        Feldst\"arke H zu kommen, muss man folgenden Zusammenhang beachten.
+        \begin{equation}
+            U_\mathrm{i} = - \dot{\Phi}_\mathrm{v} = - N_\mathrm{i} \cdot A \cdot \dot{B}
+        \end{equation}
+        Daraus l\"asst dich die Flussdichte mit folgender Formel B berechnen.
+        \begin{equation}
+            B = y \cdot \frac{\tau}{N_\mathrm{4} \cdot A_\mathrm{w}}
+        \end{equation}
+        F\"ur die magnetische Feldst\"arke benutzt man folgende Formel.
+        \begin{equation}
+            I = \frac{U_\mathrm{R_\mathrm{2}}}{R_\mathrm{2}}
+        \end{equation}
+        \begin{equation}
+            H = \frac{\Theta}{l_\mathrm{m}} = I \cdot \frac{N_\mathrm{1} + N_\mathrm{2} + N_\mathrm{3}}{l_\mathrm{m}}
+        \end{equation}
+        Die B-H-Kennlinie wird zu beginn mit der Frequenz 100 mHz aufgenommen 
+        (Abb.~\ref{fig:B(H)_3.png}). Anschlie\ss{}end werden Messungen mit 50 mHz, 200 - 900 mHz, 
+        1 Hz, 3 Hz, 5Hz sowie 10 Hz. Die Messergebnisse sind in den folgenden 
+        Abbildungen zu sehen. 50 - 500 mHz (Abb.~\ref{fig:B(H)_1.png}) und 0,6 - 10 Hz 
+        (Abb.~\ref{fig:B(H)_2.png}).
+        \bild{B(H)_3.png}{h!}{0.55}{Magnetisierungskurve bei 100 mHz}
+        \bild{B(H)_1.png}{h!}{0.55}{Magnetisierungskurve bei 50 - 500 mHz}
+        \bild{B(H)_2.png}{h!}{0.55}{Magnetisierungskurve bei 0,6 - 10 Hz}
+        \pagebreak
+        \subsection{Auswertung}
+        Bereits ab einer Frequenz von 600 mHz wird der Unterschied zu dem 
+        Schleifenverlauf bei 100 mHz deutlich. Der S\"attigungsbereich wird nur 
+        mehr partiell erreicht und ab 1 Hz wird dieser \"uberhaupt nicht mehr 
+        erreicht (Abb.~\ref{fig:B(H)_2.png}). Des Weiteren steigt $H_\mathrm{c}$ mit steigender Frequenz 
+        bis 1Hz an.  Noch h\"ohere Frequenzen f\"uhren zu einer Stauchung der 
+        Kennlinie in beiden Achsenrichtungen.
+        \\
+        \\
+        Das Messobjekt, ein ungeblechter Einsatzstahl, ist g\"unstig f\"ur die 
+        Ausbildung von Wirbelstr\"omen. Deren Verlust nimmt mit steigender Frequenz 
+        quadratisch zu und dies spiegelt sich in der breiter werdenden Hysterese 
+        wieder.
+        \\
+        \\
+        Des Weiteren weicht der Stromverlauf mit steigender Frequenz immer 
+        st\"arker von der Dreiecksform ab und nimmt einen sinus\"ahnlichen Verlauf an. 
+        Der Grund daf\"ur ist die limitierte Leistungsabgabe des Funktionsgenerators. 
+        Reduziert man die Frequenz, hat der Generator l\"anger Zeit, um denselben 
+        Energiebedarf zu decken. Die mittlere Leistungsanforderung sinkt und der 
+        Stromverlauf wird linearisiert.
+        \\
+        \\
+        Die bei Weitem kleineren Magnetisierungskurven ab 3 Hz lassen sich 
+        durch die Impedanzen der Spulen erkl\"aren. Eine Frequenzverdopplung 
+        bewirkt bei gleicher Spannung eine Halbierung der Stromst\"arke.
+        \\
+        Durch die rasche Umpolung vor dem Erreichen der S\"attigung, sowie 
+        auftretende Wirbelstromverluste, nimmt die Kennlinie einen ovalen 
+        Verlauf an.
+        \\
+        Hierbei ist zu beachten, dass die Ummagnetisierungsverluste nicht 
+        ausschlie\ss{}lich durch die eingeschlossene Kurvenfl\"ache gegeben 
+        sind, sondern auch die Frequenz eine Rolle spielt. Zum Beispiel sind 
+        die Fl\"achen bei 50 mHz und 100 mHz ann\"ahernd deckungsgleich, jedoch 
+        wird im selben Zeitintervall bei 100 mHz die Kurve zweimal 
+        durchlaufen. Dies bedeutet doppelte Verluste.
+        \\
+        In Abb.~\ref{fig:B(H)_3.png} ist die Magnetisierungskurve bei 100 mHz zu sehen. 
+        Diese weist folgende Kennwerte auf:
+        \begin{itemize}
+            \item B$_\mathrm{t}$ = 0,8835 T
+            \item B$_\mathrm{S}$ = 1,438 T
+            \item H$_\mathrm{C}$ = 259 A/m
+        \end{itemize}
+        Die maximale Stromst\"arke betr\"agt 0,5 A. Durch den ann\"ahernd linearen 
+        Verlauf und der geringen Steigung der Magnetisierungskurve, ist es 
+        anzunehmen, dass sich der Kern dabei in S\"attigung befindet.
+        \\
+        \\
+        W\"are kein Eisenkern im Magnetkreis vorhanden, so g\"abe es keine 
+        gezielte F\"uhrung des magnetischen Flusses von Spule zu Spule. 
+        Vernachl\"assigt man jedoch jegliche Streufl\"usse und nimmt dar\"uber 
+        hinaus an, der Fluss folge ann\"ahernd dem Eisenkernverlauf, so ergibt 
+        sich die maximal m\"ogliche Flussdichte f\"ur 100 mHz und 
+        $\mu_\mathrm{r}$(Luft) = 1 zu:
+        \begin{equation}
+            B_\mathrm{max} = \mu_\mathrm{0} \cdot H_\mathrm{max} = 0,0026 T
+        \end{equation}
+        Die volumenspezifischen Verluste setzen sich aus 
+        Ummagnetisierungsverlusten und Wirbelstromverlusten zusammen. Die 
+        Ummagnetisierungsverluste sind proportional der eingeschlossenen 
+        Fl\"ache der Hystereseschleife, sowie der Frequenz. Bei einem 
+        punktsymmetrischen Hystereseverlauf ergibt dies:
+        \begin{equation}
+            p_\mathrm{hys} = 2 \cdot f \cdot (\int_{-B_\mathrm{r}}^{B_\mathrm{max}}H \cdot dB_\mathrm{auf} - \int_{B_\mathrm{r}}^{B_\mathrm{max}}H \cdot dB_\mathrm{um})
+        \end{equation}
+        Dabei stellt $B_\mathrm{auf}$ den Aufmagnetisierungsverlauf der Flussdicht und Bum den 
+        Ummagnetisierungsverlauf dar. Eine pr\"azise Methode, die Hystereseverluste 
+        zu berechnen, w\"are das Bilden von Rechtecken mithilfe der gemessenen
+        Datenpunkte und deren Summierung - in anderen Worten, der manuelle 
+        Prozess der Integration. N\"aherungsweise l\"asst sich die Fl\"ache im ersten 
+        Quadranten allerdings auch als $H_\mathrm{c} \cdot B_\mathrm{max}$ darstellen. Die Fl\"ache im vierten 
+        Quadranten l\"asst sich unter Annahme einer Dreiecksform mit $\frac{H_\mathrm{c}\cdot B_\mathrm{r}}{2}$ 
+        zusammenfassen. Nimmt man wiederum die Symmetrie der Hysterese vorweg, so 
+        lassen sich die spezifischen Ummagnetisierungsverluste durch
+        \begin{equation}
+            p_\mathrm{hys} = 2 \cdot f \cdot (H_\mathrm{c} \cdot B_\mathrm{max} + \frac{H_\mathrm{c}\cdot B_\mathrm{r}}{2})
+        \end{equation}
+        bilden. F\"ur f = 100 mHz, $H_\mathrm{c}$ = 259 A/m, $B_\mathrm{max}$ = 1,438 T und $B_\mathrm{r}$ = 0,8835 T ist
+        \begin{equation}
+            p_\mathrm{hys} = 96,59 \,\frac{W}{m^3}
+        \end{equation}
+        Die volumenspezifischen Wirbelstromverluste sind bei niedrigen Frequenzen allgemein f\"ur einen, mit d\"unnen Blechen lamellierten, Kern durch
+        \begin{equation}
+            p_\mathrm{w} = \frac{\pi^2}{6}f^2B_\mathrm{max}^2a^2 \sigma
+        \end{equation}
+        gegeben. Dabei gibt a die d\"unnere der beiden, zum magnetischen Fluss normal liegenden, Seiten des Blechs an. Die spezifische Leitf\"ahigkeit des Blechs wird mit $\sigma$ bezeichnet. Der vorliegende ungeblechte magnetische Kreis dient als ein einzelnes Blech mit der Seitenl\"ange b = 15 mm. Nimmt man nun f\"ur $\sigma = 10^7$ S/m als Leitf\"ahigkeit von Eisen, so ergeben sich die Wirbelstromverluste zu
+        \begin{equation}
+            p_\mathrm{w} = 76,53\,\frac{W}{m^3}
+        \end{equation}
+        Also haben bereits bei 100 mHz die Wirbelstromverluste fast denselben Betrag wie die Ummagnetisierungsverluste! Streng genommen sind die reinen Hystereseverluste sogar etwas geringer, da ja Wirbelstr\"ome einen Einfluss auf die Messung der Hysteresewerte haben.
+    \section{Aufnahme der Permeabilit\"atskurve}
+        \subsection{Durchf\"uhrung}
+        Der \"Ubungsaufbau f\"ur die Bestimmung der relativen Permeabilit\"at ist wie die Schaltung zur Magnetisierungskurvenmessung jedoch ohne Integrator. Die Spannung wird direkt an der Spule 4 gemessen. Die restlichen Werte sind ident und die Frequenz wird auf 100 mHz eingestellt.
+        \\
+        \\
+        Die Messung an der Spule ergibt in diesem Fall
+        \begin{equation}
+            U = - N_\mathrm{4} \cdot A_\mathrm{w} \cdot \frac{dB}{dt}
+        \end{equation}
+        Und l\"asst sich \"uber die Zusammenh\"ange
+        \begin{equation}
+            k = \frac{dH}{dt} = \frac{dI}{dt} \frac{N_\mathrm{1} + N_\mathrm{2} + N_\mathrm{3}}{l_\mathrm{m}} = I_\mathrm{max} \cdot \frac{4f(N_\mathrm{1} + N_\mathrm{2} + N_\mathrm{3})}{l_\mathrm{m}}
+        \end{equation}
+        \begin{equation}
+            \mu_\mathrm{diff} = \frac{dB}{dH} = \frac{dB}{dt} \frac{1}{k}
+        \end{equation}
+        Mit der Permeabilit\"at verkn\"upfen:
+        \begin{equation}
+            \mu_\mathrm{diff} = \frac{U}{N_\mathrm{4}A_\mathrm{w}k} = U \cdot \frac{l_\mathrm{m}}{4fN_\mathrm{4}(N_\mathrm{1} + N_\mathrm{2} + N_\mathrm{3})A_\mathrm{w}I_\mathrm{max}}
+        \end{equation}
+        \begin{equation}
+            \mu_\mathrm{rdiff} = \frac{\mu_\mathrm{diff}}{\mu_\mathrm{0}}
+        \end{equation}
+        \bild{Strom.png}{h!}{0.65}{Magnetisierungsstrom bei 100 mHz}
+        \bild{Permeabilitaet.png}{h!}{0.65}{Permeabilit\"atskurve und Magnetisierungskurve bei 100 mHz}
+        Anmerkung: Die in negative H-Richtung verlaufende Permeabilit\"atskurve wurde um die Abszisse gespiegelt (Abb.~\ref{fig:Permeabilitaet.png}), da bei der Berechnung nur der positive Steigungswert k des Stromverlaufs einfloss.
+        \subsection{Auswerung}
+        Der Kurvenverlauf der relativen Permeabilit\"at entspricht in etwa dem 
+        um einen Faktor $\mu_\mathrm{0}$ gestauchten Betrag der Steigung der 
+        Hystereseschleife (Abb.~\ref{fig:Permeabilitaet.png}). Der Maximalwert der differentiellen 
+        relativen Permeabilit\"at l\"asst sich durch Einsetzen des Maximalwerts 
+        der gemessenen Spulenspannung in die aufgestellte Formel ermitteln und 
+        betr\"agt 2633,9. Der Verlauf verdeutlicht die S\"attigungserscheinung in 
+        der Probe. Dies ist besonders am Abfallen von $\mu_\mathrm{r}$ auf einen Bruchteil 
+        des Maximalwerts (Idealfall: $\mu_\mathrm{r}$ = 1) ersichtlich. Ebenfalls kann man 
+        aufgrund des, ab |H| > 1,5kA/m ann\"ahernd konstant bleibenden, 
+        Permeabilit\"atswerts auf S\"attigung schlie\ss{}en.
+    \section{Entmagnetisierung}
+        \subsection{Durchf\"uhrung}
+        Um die Probe zu entmagtisieren und die Entmagnetisierungskennlinie aufzunehmen, wird der Integrator erneut im Schaltkreis verwendet. Au\ss{}erdem wird ein Amplitudenmodulator hinzugeschaltet, um die Amplitude des Magnetisiserungsstromes kontinuierlich zu senken. Daf\"ur wird ein RC-Glied mit einer Zeitkonstante von ca 60 Sekunden genutzt.
+        \bild{entmagnetisierung_aufbau.png}{h!}{1.5}{Schaltung zum aufnehmen der Entmagnetisierungskennlinie}
+        \bild{Entmagnetisierung.png}{h!}{0.5}{Entmagnetisierungshysteresenfamilie bei 100 mHz}
+        \\
+        Funktionsgenerator: 10 V$_\mathrm{pp}$, 100 mHz, Sinusform
+        \pagebreak
+        \subsection{Auswertung}
+        Durch die Amplitudenmodulation wird auch der Magnetisiserungsstrom immer kleiner. Das erzeugt eine deutlich erkennbare Hysteresefamilie. Durch die immer kleiner werdende maximale Feldst\"arke wird bei jedem Zyklus eine nueue Hysterese gebildet und die Werte der vorrigen Hysterese werden nicht mehr erreicht. Dies f\"uhrt letzten Endes zu einer entmagnetisierten Probe.
+    \section{Neukurve}
+        \subsection{Durchf\"uhrung}
+        Basierend auf dem vorherigen Versuch ist die Probe entmagnetisiert. Durch diesen Versuch soll die Probe neu magnetisiert werden. Daf\"ur wird der Messaufbau aus dem Versuch zur Aufnahme der Magnetisieungskennlinie verwendet. Zum Aufzeichnen werden zwei Perioden eines Dreieck-Signals verwendet. Daf\"ur wird der Ausgang des Funktionsgenerators manuell Getriggert, um die Probe nur den geplanten zwei Zyklen auszusetzten.
+        \\
+        \\
+        Funktionsgenerator:	6 V$_\mathrm{pp}$, 100 mHz, Ramp, Sym. 50\%, Burst, \# Cycles: 2
+        \bild{_Neukurve.png}{h!}{0.8}{Neukurve einer unlegierten Einsatzstahlkern-Probe bei 6 V$_\mathrm{pp}$, 100 mHz}
+        \subsection{Auswertung}
+        Anhand der Neukurve ist sehr sch\"on erkennbar, dass die Probe vor dem triggern entmagentisiert war. Die Kennlinie startet im Ursprung und steigt bis zum Erreichen der maximalen Feldst\"arke auf die maximale magnetische Flussdichte $B_\mathrm{max}$. Nach dem Ummagnetisieren der Probe unterscheiden sich die Werte f\"ur die Feldst\"arke im Bereich von 0 bis $H_\mathrm{max}$ von der Neukurve. Bei H = 0 nimmt die Flussdichte den Wert der Remanenzflussdicht an, diese liegt hierbei bei ca -0,8 T. 
+        Nach dem erneuten Aufmagnetisieren folgt die Kurve nun dem Verlauf der ersten Periode. Darann kann man erkennen, das nach zwei Perioden die Hystereseschleife abgeschlossen ist und abgebildet werden kann.
+        \\
+        \\
+        Anzumerken ist, dass, da der Spitzenwert der Spannung auf 6 V gesetzt wurde, auch der maximale Strom zum Magnetisieren auf ca $\frac{2}{3}$ des maximalen Magnetisierungsstromes aus vorherigen Versuchen steigt. Dies hat ein Absinken der maximalen magnetischen Flussdichte Bmax auf ca 1,26 T anstatt den vorher gemessenen 1,438 T.
+    \chapter{\"Ubung am Elektromagnet}
+    \section{\"Ubungsaufbau}
+    Zylindrische Pole mit ca 6 mm Abstand zueinander
+    \\
+    Strom: 29,7 A
+    \section{\"Ubungsdurchf\"uhrung: Metallscheiben im Magnetfeld}
+    Metallscheiben in zwei verschiedenen Gr\"a\ss{}en (\O20 x 2 mm und \O30 x 2 mm) und aus unterschiedlichen Materialien (Aluminium, Kupfer und Messing) werden im Luftspalt fallen gelassen.
+        \subsection{Beobachtung}
+        Zuerst beschleunigen die Scheiben, wenn sie genau zwischen den beiden Polschuhen sind. Durchqueren sie dann den Rand der Polschuhe, werden sie abgebremst bevor sie herausfallen.
+        \\
+        \\
+        Des weiteren wurde beobachtet, dass die kleinen Scheiben am Rand der Polschuhe entlanglaufen, und dann am untersten Punkt herausfallen. Dieser Effekt wurde nur beobachtet, als die Scheiben nicht tief genug zwischen den Polschuhen losgelassen wurden.
+        \subsection{Erkl\"arung}
+        \bild{elektromagnet_magnetfeld.png}{h!}{2}{Schema des Magnetfeldes mit zyslindrischen Polschuhen}
+        Die Magnetfeldverteilung um die Polschuhe sieht wie folgt aus. In der Mitte der Polschuhe befindet sich ein homogenes Feld, dessen Feldlinien parallel zur Symmetrieachse der Zylinder verlaufen. Am Rand der Polschuhe treten Inhomogenit\"aten in Form von Kr\"ummungen der Feldlinien auf. Diese Feldlinien sind weg von der Achse gekr\"ummt.
+        \\
+        \\
+        Diese Feldverteilung hat zur Folge, dass sich das Feld, das die Scheibe durchdringt, sich zwischen den Polschuhen nicht \"andert. In diesem Bereich wirkt nur die Gravitation auf die Scheibe. Bewegt sich die Scheibe dann in den Randbereich so erf\"ahrt sie eine Feld\"anderung. Gem\"a\ss{} dem Induktionsgesetz
+        \begin{equation}
+            rot \vv{\bm{E}} = - \frac{\partial \vv{\bm{B}}}{\partial t}
+        \end{equation}
+        und dem lokalem Ohmschen Gesetz
+        \begin{equation}
+            \vv{\bm{J}} = \sigma \cdot \vv{\bm{E}}
+        \end{equation}
+        entsteht in der Scheibe, unter \"Anderung des Magnetischen Feldes, ein 
+        Elektrisches Feld. Aufgrund der Leitf\"ahigkeit von Kupfer, Aluminium 
+        und Messing (eine Kupferlegierung mit Zink) pr\"agt sich eine Stromdichte 
+        in der Scheibe ein (Wirbelstr\"ome). Diese Stromdichte hat wiederum ein 
+        Magnetisches Feld zur Folge, das sich aufbaut, und dem Magnetischen 
+        Feld des el. Magneten entgegenwirkt. Daher bremst die Scheibe ab. Da 
+        sich bei keiner Bewegung der Scheibe auch keine Bremswirkung ergeben 
+        w\"urde, stellt sich ein Gleichgewicht ein, bei dem die Scheibe langsam 
+        weiter nach unten sinkt, bis sie schlie\ss{}lich kaum noch von den 
+        Inhomogenit\"aten des Feldes beeinflusst wird.
+        \subsection{Relevante Parameter}
+        Relevant sind vor allem die Leitf\"ahigkeit der Scheibe, also das Material an sich, sowie die Geometrie der Scheibe, also die Gr\"o\ss{}e und Form.
+        \subsection{Experiment mit geschlitzten Scheiben}
+        \bild{elektromagnet_geschlitzte_scheiben.png}{h!}{2}{Schema der geschlitzten Scheibe mit Wirbelstr\"omen}
+        Aufgrund der ge\"anderten Geometrie, ergeben sich kleinere Wirbelstr\"ome. Die meisten Wirbelstr\"ome l\"oschen sich gegensietig aus. \"Ubrig bleiben nur noch kleine Wirbelstr\"ome am Rand der Scheibe. Die sind allerdings so schwach, das die Scheibe kaum abgebremst wird. Man merkt nur eine sehr geringe Geschwindigkeits\"anderung im Vergleich zu den nicht-geschlizten Scheiben.
+        \subsection{Versuch mit 5-Cent M\"unze}
+        Erwartungsgem\"a\ss{} sollte die 5-Cent M\"unze, da sie aus Kupfer besteht, ebenfalls an den R\"andern abgebremst werden. Da sie jedoch einen Magnetischen Kern besitzt, ist zu erwarten, das man sie kaum erst in den Magneten einf\"uhren kann, da sie davor schon angezogen wird von den Polschuhen.
+        \subsection{Erkl\"arung zu der 5-Cent M\"unze}
+        Wie zu erwarten war, war es erst gar nicht M\"oglich gezielt zwischen die Polschuhe zu bringen, um sie dort loszulassen. Schon bei n\"aherung ist sie aus der Hand auf den Magneten gesprungen. Daraus schlie\ss{}en wir, dass sie tats\"achlich einen ferromagnetischen Kern besitzt.
+        \subsection{Versuch mit Aluminium Platte}
+        Schon beim hineinschieben der Platte kann man eine starke Gegenkraft bemerken, die ein schnelles hineinschieben unm\"oglich macht. Das gleiche l\"asst sich bei schnellem herausziehen beobachten. Das herausziehen ist nur sehr langsam m\"oglich.
+        \\
+        \\
+        Erkl\"aren l\"asst sich das ganze wieder mittels dem Induktionsgesetz und dem lokalen Ohmschen Gesetz. Nur in diesem Fall sind die flie\ss{}enden Str\"ome wesentlich gr\"o\ss{}er und die resultierende Gegenkraft demnach viel Gr\"o\ss{}er. Demzugrunde liegt die Geometrie der Platte im Vergleich du den Scheiben. Die Platte ist wesentlich dicker und gr\"o\ss{}er, das bewirkt einen verminderten elektrischen Widerstand der Platte und somit ist sie Leitf\"ahiger als die Scheiben.
+        \\
+        \\
+        Des weiteren l\"asst sich der Widerstand, bei schnellem herausziehen, durch die Ableitung der magnetischen Flussdichte nach der Zeit erkl\"aren. Ein schnelleres herausziehen der Platte hat eine gr\"o\ss{}ere Zeitliche \"Anderung der magnetischen Flussdichte zur Folge. W\"urde die Platte durch die resultierende Gegenkraft zur G\"anze zum Stillstand gebrach werden, so w\"are die Zeitliche \"Anderung wieder Null, und somit g\"abe es wieder keine Gegenkraft. Demnach stellt sich wieder ein Gleichgewicht ein, bei dem die Platte langsam aus dem Magneten gezogen werden kann. 
+    \section{Eisenblech im Magnetfeld}
+        \subsection{Aufbau}
+        Der Aufbau unterscheidet sich ganz leicht von der Angabe. Alle Proben sind \"ubereinander mit kleinen Platzhaltern dazwischen im Alurahmen angeordnet.
+        \subsection{Verhalten der verschiedenen Proben}
+            \subsubsection{Rundes Wei\ss{}blech}
+            Das runde Wei\ss{}blech bleibt wie es vorher drinne lag, es richtet sich nicht merklich aus.
+            \subsubsection{Quadratisches Wei\ss{}blech}
+            Das quadratische Wei\ss{}blech richtet sich so aus, das eine Diagonale den Feldlinien parallel ist. 
+            \subsubsection{Rechteckiges Wei\ss{}blech}
+            Das rechteckige Wei\ss{}blech richtet sich der L\"ange nach aus, sodass die k\"urzeren Seiten den Polschuhen zugewandt sind.
+            \subsubsection{Rundes Trafoblech}
+            Das runde Trafoblech richtet sich merklich aus, jedoch ist aufgrund der Symmetrie erst kein Merkmal der Ausrichtung sichtbar.
+        \subsection{Drehen der Proben}
+            \subsubsection{Rundes Wei\ss{}blech}
+            Das Runde Wei\ss{}blech l\"asst sich Problemlos im Magnetfeld drehen, jedoch hat es zwei Positionen, die es bevorzugt. Diese liegen genau gegen\"uber einander.
+            \subsubsection{Quadratisches Wei\ss{}blech}
+            Das quadratische Wei\ss{}blech hat vier verschiedene bevorzugte Positionen. Jede Position bei der eine Ecke am n\"ahesten zu den Polschuhen ist wird bevorzugt eingenommen.
+            \subsubsection{Rechteckiges Wei\ss{}blech}
+            Das rechteckige Wei\ss{}blech besitzt zwei bevorzugte Positionen. Beide bei denen die k\"urzere Seite am n\"achsten zu den Polschuhen ist.
+            \subsubsection{Rundes Trafoblech}
+            Das runde Trafoblech hat vier bevorzugte Positionen, jeweils im Winkel von 90$^{\circ}$. Jedoch sind zwei der vier Positionen noch ein wenig mehr bevorzugt als die anderen Zwei, diese liegen sich genau gegen\"uber.
+        \subsection{Erkl\"arung}
+        Grundlegend verantwortlich f\"ur die Ausrichtung der Bleche ist der Magnetische Widerstand (Reluktanz). Da eine geringere Reluktanz bevorzugt wird, richten sich die Bleche so aus, dass die Reluktanz minimiert wird. 
+        \\
+        \\
+        F\"ur das runde Wei\ss{}blech w\"urde das bedeuten, dass es keine bevorzugte Position hat, jedoch wurden zwei festgestellt. Dies ist aufgrund der Biegung des Bleches zu erkennen. Offensichtlich wurde das Blech nicht sachgem\"a\ss{} benutzt und so wurde es ein wenig gebogen. Dies hat zur Folge, dass es sich im Feld ausrichtet.
+        \\
+        \\
+        Das quadratische Wei\ss{}blech hat den geringsten Widerstand, wenn es die Diagonale parallel zum Feld ausrichtet. So sind alle 90$^{\circ}$ eine bevorzugte Position, da so die Reluktanz jeweils am geringsten ist.
+        \\
+        \\
+        Bei dem rechteckigen Wei\ss{}blech gibt es nur zwei solcher Positionen, da es sich der l\"ange nach ausrichtet und so die Reluktanz minimiert. Bei beiden der eckigen Wei\ss{}bleche ist die Ausrichtung also durch die Geometrie gegeben.
+        \\
+        \\
+        Da das Trafoblech allerdings, genauso wie das runde Wei\ss{}blech, keine solcher Geometrischen Merkmale besitzt, ist die Ausrichtung hierbei auf etwas anderes zur\"uckzuf\"uhren. Das Trafoblech richtet sich nur aufgrund  der Herstellung aus. Dabei wird das Blech bis zu der richtigen Dicke mehrere Male gewalzt. Diese Walzprozesse werden immer in gleicher Richtung ausgef\"uhrt, sodass sich die Kristalle des Bleches ausrichten. So ergeben sich zwei Hauptrichtungen und zwei Nebenrichtungen. Die Hauptrichtungen sind jeweils 180$^{\circ}$ zueinander und die Nebenrichtungen sind ebenfalls 180$^{\circ}$ zueinander. Haupt- zu Nebenrichtung liegen jeweils 90$^{\circ}$ zueinander. In der Hauptrichtung ist der Magnetische Widerstand am geringsten.
+    \section{Diamagnetische Stoffe}
+        \subsection{Durchf\"uhrung}
+        Es werden Proben aus Graphit, Titan, Wismut und Platin, die an einem Bindfaden befestigt sind, untersucht.
+        \\
+        Zur Veranschaulichung des Verhaltens diamagnetischer Stoffe werden die Proben dem Luftspalt zuerst seitlich angen\"ahert, also in das inhomogene Feld gehalten. Anschlie\ss{}end werden die Proben direkt in den Luftspalt, in das homogene Feld, gehalten und auf ihr Verhalten untersucht. 
+        Dabei betr\"agt der Abstand zwischen den Polschuhen etwa 6 mm.
+        \bild{diamag_anordnung.png}{h!}{0.6}{Versuchsaufbau zur Untersuchung diamagnetischer Stoffe}
+        \pagebreak
+        \subsection{Auswertung}
+        \begin{itemize}
+            \item Graphit: Wird die Probe aus pyrolytischem Graphit in das inhomogene Feld gehalten, also seitlich angen\"ahert, erf\"ahrt die Probe eine starke Absto\ss{}ung. H\"alt man diese direkt in den Luftspalt, ist eine eindeutige Ausrichtung, und zwar orthogonal zu den Polschuhen, also l\"angs der Feldrichtung erkennbar. Versucht man die Probe \"uber den Faden zu drehen, reagiert diese zuerst nicht, bis sie sich schlie\ss{}lich um 180 Grad dreht und sich erneut orthogonal zum Polschuh ausrichtet.
+            \item Titan: Im inhomogenen Bereich ist eine leichte Absto\ss{}ung erkennbar. Wenn die Probe direkt in den Luftspalt gehalten wird, richtet sich diese mit der gr\"o\ss{}eren Fl\"ache parallel zum Polschuh aus.
+            \item Wismut: Im inhomogenen Bereich ist nur noch sehr schwache Absto\ss{}ung erkennbar. Im homogenen Bereich ist keine Ausrichtung erkennbar, da die Probe eine zylinderf\"ormige Oberfl\"ache aufweist. Es ist lediglich zu erkennen, sobald die Probe \"uber den Faden gedreht wird, dass die Drehung stark abgebremst wird.
+            \item Platin: Im inhomogenen Bereich au\ss{}erhalb des Luftspalts sind weder Anziehung noch Absto\ss{}ung erkennbar. Im Luftspalt richtet sich die Probe l\"angs der Feldrichtung aus.            
+        \end{itemize}
+    \section{Magnetfeldmessung}
+        \subsection{Durchf\"uhrung}
+        Wegen eines technischen Defektes des Fluxmeters wird f\"ur die Magnetfeldmessung ein Gau\ss{}meter (bzw. Teslameter) verwendet. Der Luftspalt des Magneten wird auf 6 mm eingestellt. Nach der Kalibrierung des Messger\"ates wurde der Magnet mit einem Strom von 30 A gespeist und das Magnetfeld auf Homogenit\"at gepr\"uft.
+        \\
+        \\
+        Um das Magnetfeld in Abh\"angigkeit vom Magnetisierungsstrom in Form einer Kurve darzustellen, wird die Sonde des Messger\"ates in die Mitte des Luftspaltes gehalten und der Magnet eingeschalten. Die Stromst\"arke wird im Intervall von 0 bis 10 A in 1 A Schritten und im Intervall von 10 A bis 30 A in 2 A Schritten gesteigert.
+        \subsection{Auswertung}
+        Die \"Uberpr\"ufung auf Homogenit\"at ergibt, dass das Magnetfeld in der Mitte der Polschuhe ann\"ahernd homogen ist. Wenn man die Messsonde von der Rotationsachse des Eisenkernes entfernt, erkennt man etwa ab dem Rand, dass die homogene Feldverteilung nach au\ss{}en wegbricht, und ein inhomogenes Magnetfeld vorliegt.
+        \\
+        \\
+        Die Messung der Flussdichte ergibt folgende Werte:
+        \bild{1_4_5_4.png}{h!}{1}{Die Messkurve zeigt die Flu\ss{}dichte B in Abh\"angigkeit der Stromst\"arke I}
+        \pagebreak
+        \\
+        Anhand der Grafik ist erkennbar, dass die magnetische Flussdichte bis zu einem Spulenstrom von etwa 7 A ann\"ahernd linear ansteigt. Danach ist eine Abflachung der Kurve erkennbar denn hier kommt der Eisenkern in den Bereich der S\"attigung und die Flussdichte steigt nur mehr langsam an.
+        \\
+        \\
+        Mit der Idealisierung aller Parameter, also der Annahme, dass im Luftspalt ein homogenes Magnetfeld ohne Streufelder vorliegt, und durch die Annahme, dass die Permeabilit\"at im Eisenkern unendlich hoch ist, l\"asst sich die Gesamtwindungszahl des Elektromagneten berechnen.
+        \\
+        \\
+        Aus der Formel f\"ur die magnetische Flussdichte: 
+        \begin{equation}
+            B = \mu_\mathrm{0} \cdot \frac{NI}{l}
+        \end{equation}
+        ergibt sich folgender Zusammenhang um die Windungszahl zu berechnen:
+        \begin{equation}
+            N = \frac{Bl}{\mu_\mathrm{0}I}
+        \end{equation}
+        \begin{itemize}
+            \item N: Gesamtwindungszahl beider Spulen
+            \item B: magnetische Flussdichte im Luftspalt
+            \item I: Spulenstrom
+            \item l: L\"ange des Luftspaltes
+        \end{itemize}
+        F\"ur die Berechnung ist es wichtig, einen Messpunkt zu w\"ahlen, bei dem der Magnet noch nicht ges\"attigt ist, sodass eine m\"oglichst geringe Abweichung vom idealisierten Modell besteht. Bei einem Spulenstrom von 5 A und einer Flussdichte von 1,5 T l\"asst sich eine Gesamtwindungszahl von 1432 Windungen errechnen.  
+    \section{Lorentzkraft am Stromdurchflossenen Leiter}
+        \subsection{Durchf\"uhrung}
+        Absch\"atzen der Kraft, die auf einen geraden Linienleiter mit I = 20 A im Luftspalt des Elektromagneten wirkt.
+        Als Luftspaltl\"ange des Magneten werden 6 mm eingestellt und der Magnet wird mit einem Spulenstrom von 30 A betrieben.
+        Anschlie\ss{}end wird das Netzger\"at mit der Messleitung kurzgeschlossen und die Messleitung horizontal in den Luftspalt gehalten. Am Netzger\"at wird ein Strom von 20 A eingestellt, um die Kraftwirkung des Elektromagneten auf den stromdurchflossenen Linienleiter zu beobachten.
+        \subsection{Auswertung}
+        Aus der Magnetfeldmessung ist bekannt, dass bei einem Spulenstrom von 30 A eine Flussdichte von 2,1 T vorhanden ist. Der Durchmesser der Polschuhe betr\"agt ca. 10 Zentimeter. 
+        Mithilfe der Formel zur Berechnung der Kraft auf einen stromdurchflossenen Linienleiter im homogenen Magnetfeld: 
+        \begin{equation}
+            \vv{\bm{F}} = Il \cdot \vv{\bm{e_\mathrm{l}}} \times \vv{\bm{B}}
+        \end{equation}
+        \begin{itemize}
+            \item F: Kraft auf den Leiter
+            \item I: Strom durch den Leiter
+            \item l: L\"ange des Leiters im Luftspalt
+            \item $\vv{\bm{e_\mathrm{l}}} \times \vv{\bm{B}}$: Richtung der Kraft
+        \end{itemize}
+        l\"asst sich die Kraft auf den Leiter n\"aherungsweise berechnen. Demzufolge ergibt sich eine Kraft von 4,2 N, also einer Gewichtskraft von 0,4 kg.
+\listoffigures
+\end{document}

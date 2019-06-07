@@ -1,0 +1,9 @@
+*.aux
+*.docx
+*.fdb_latexmk
+*.log
+*.lof
+*.fls
+*.zip
+*.gz
+*.toc
