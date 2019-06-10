@@ -1,6 +1,6 @@
 \documentclass[a4paper,twoside,12pt,DIV=13,BCOR=5mm,numbers=noenddot,cleardoublepage=empty]{scrbook}
 \input{format-LU} 
-\usepackage{graPhicx}
+\usepackage{graphicx}
 \usepackage{esvect}
 \usepackage{bm}
 \usepackage{mathtools}
@@ -41,7 +41,72 @@
     \setcounter{chapter}{0}
 
     \chapter{Durchgangs- und Oberfl\"achenwiderstand}
+        \section{Grundlagen}
+            \subsection{Durchgangswiderstand}
+            \subsection{Oberfl\"achenwiderstand}
+        \section{Aufgabenstellung}
+        Im Zuge des Dielektrika-Labors sollen f\"unf verschiedene Dielektrika 
+        zum Messen herangezogen werden. Bei jedem dieser Dielektrika sollen 
+        jeweils Durchgangswiderstand als auch Oberfl\"achenwiderstand gemessen 
+        werden. Die f\"unf Dielektrika sind PVC, Phenolharz, Teflon, Plexiglas und 
+        Epoxidharz\\
+        Wichtig ist jedoch dass darauf geachtet wird das die Messwerte jeweils zum 
+        gleichen Zeitpunkt nach dem Einschalten des Messger\"ates aufgenommen werden.
+        In diesem Fall wird jeweils nach einer vollen Minute der Messwert 
+        aufgenommen, um die Messwerte der unterschiedlichen Dielektrika vergleichen
+        zu k\"onnen.
+        \\
+        \\
+        Die Proben, die gemessen werden, werden jeweils zwischen zwei Elektroden
+        mit einem Schutzring herum platziert (siehe Abbildung Abb.~\ref{fig:elektrodenanordnung_widerstand.PNG}).
+        Die Messzelle wird dabei f\"ur beide Arten der Widerstandsmessung herangezogen,
+        sie wird lediglich anders beschaltet.
 
+        \bild{elektrodenanordnung_widerstand.PNG}{!h}{1}{Elektrodenanordnung der Messzelle}
+        \section{Durchgangswiderstand}
+            \subsection{\"Ubungsaufbau}
+            Als Messgerät wird ein Ohmmeter MILLI-TO 2 der Frima Dr. Kamphause 
+            verwendet. Der Widerstand wird darauf digital angezeigt 
+            (Messbereich: 50m$\Omega$ - 200 T$\Omega$; Messgenauigkeit: $\pm$1,5\%,
+            $\pm$1 Digit bei 23 $^{\circ}$C). Abbildung 
+            Abb.~\ref{fig:elektrodenanordnung_widerstand.PNG} zeigt die Messzelle und deren Aufbau.
+            \\
+            \\
+            \bild{messaufbau_durchgang.PNG}{t}{1}{Beschaltung der Messzelle zum Messen des Durchgangswiderstandes}
+            Abbildung Abb.~\ref{fig:messaufbau_durchgang.PNG} zeigt die Schaltung zum 
+            Aufnehmen des Durchgangswiderstandes. Wichtig dabei ist anzumerken, dass auch 
+            der Schutzring angeschlossen ist. Dies ist notwendig, da das Dielektrikum nicht nur 
+            einen Durchgangswiderstand sonder auch einen Oberfl\"achenwiderstand. Dieser 
+            erm\"oglicht auch eine Ladungstr\"agerbewegung \"uber die Oberfl\"ache der Probe.
+            Um diesen parasit\"aren Oberfl\"achenstrom abzufangen, wird der Schutzring 
+            mitbeschaltet. So wandern die Ionen nicht zur Gegenelektrode, sondern \"uber den Schutzring.
+            \subsection{Ergebnisse und Erkenntnisse}
+            Die Messwerte wurden jeweils nach einer Minute im Betrieb aufgenommen.
+            \begin{table}[h]
+                \begin{center}
+                    \begin{tabular}{|c||c|c|}
+                        \hline
+                        Material & $R_D$ in $\Omega$ & $\rho_D$ in $\Omega$m \\
+                        \hline
+                        \hline
+                        Plexiglas & * & * \\
+                        \hline
+                        Phenolharz & * & * \\
+                        \hline
+                        PVC & * & * \\
+                        \hline
+                        Teflon & * & * \\
+                        \hline
+                        Epoxidharz & * & * \\
+                        \hline
+                    \end{tabular}
+                    \caption{Ergebnisse der Messung und errechneter Durchgangswiderstand}
+                    \label{tab:table1}
+                \end{center}
+            \end{table}
+        \section{Oberfl\"achenwiderstand}
+            \subsection{\"Ubungsaufbau}
+            \subsection{Ergebnisse und Erkenntnisse}
     \chapter{Dieelektrizit\"atszahl}
 
     \chapter{Durchschlagsfestigkeit}
